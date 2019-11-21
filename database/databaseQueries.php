@@ -8,28 +8,19 @@
    */
   function createDatabase($databaseName) {
     $sql = "
-      DROP DATABASE IF EXISTS $databaseName;
-      CREATE DATABASE $databaseName;
+      CREATE DATABASE IF NOT EXISTS $databaseName;
+      ALTER DATABASE `cocktail` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
       USE $databaseName;
       CREATE TABLE user (
-        id varchar(100),
+        id varchar(100) PRIMARY KEY,
         mdp varchar(100),
         nom varchar(100),
         prenom varchar(100)
       );
       CREATE TABLE cocktail (
-        nomCocktail varchar(100),
-        descIngretient varchar(100),
-        descPreparation varchar(100),
-        photo varchar(100)
-      );
-      CREATE TABLE ingredient (
-        nomIngredient varchar(100),
-        nomCategorie varchar(100)
-      );
-      CREATE TABLE categorie (
-        nomCategorie varchar(100),
-        superCategorie varchar(100)
+        nomCocktail varchar(100) PRIMARY KEY,
+        descIngredient varchar(10000),
+        descPreparation varchar(10000)
       )
     ";
 
