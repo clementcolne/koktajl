@@ -19,8 +19,25 @@
       );
       CREATE TABLE cocktail (
         nomCocktail varchar(100) PRIMARY KEY,
-        descIngredient varchar(10000),
-        descPreparation varchar(10000)
+        descIngredient varchar(1000),
+        descPreparation varchar(1000)
+      );
+      CREATE TABLE ingredient (
+        nomIngredient varchar(100) PRIMARY KEY
+      );
+      CREATE TABLE liaison (
+        nomCocktail varchar(100),
+        nomIngredient varchar(100),
+        PRIMARY KEY(nomCocktail, nomIngredient),
+        FOREIGN KEY(nomCocktail) REFERENCES cocktail(nomCocktail),
+        FOREIGN KEY(nomIngredient) REFERENCES ingredient(nomIngredient)
+      );
+      CREATE TABLE sousCategorie (
+        nomCategorie varchar(100),
+        nomSuperCategorie varchar(100),
+        PRIMARY KEY(nomCategorie, nomSuperCategorie),
+        FOREIGN KEY(nomCategorie) REFERENCES ingredient(nomIngredient),
+        FOREIGN KEY(nomSuperCategorie) REFERENCES ingredient(nomIngredient)
       )
     ";
 
