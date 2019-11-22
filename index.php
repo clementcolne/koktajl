@@ -10,7 +10,7 @@ include './datas/Donnees.inc.php';
 
 
 // informations relatives à la connexion de la base de donnée
-$servername = "mysql:host=localhost;charset=utf8";
+$servername = "mysql:host=localhost;dbname=myDB;charset=utf8";
 $databaseName = "myDB";
 $username = "root";
 $password = "";
