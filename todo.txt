@@ -1,0 +1,13 @@
+// TODO
+
+VISUEL :
+  - changer la position de l'image dans la page de recette, c'est moche, pas visible si bcp d'ingrédients
+
+TECHNIQUE :
+  - compte utilisateur (création de compte + authentification)
+  - gestion des recettes préférées
+    - ajouter un panier des recettes préférées
+    - si connecté alors ajouter dans la DB le titre de la recette préférée
+    - si pas connecté, ajouter le titre des recettes préférées dans un cookie SESSION
+  - recherche de recette par mot clé
+  - recherche de recette par filtre + du résultat le plus proche au résultat le plus éloigné
