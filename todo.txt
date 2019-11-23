@@ -1,5 +1,8 @@
 // TODO
 
+ORGANISATION:
+  - réorganiser l'arborescence du projet
+
 VISUEL :
   - changer la position de l'image dans la page de recette, c'est moche, pas visible si bcp d'ingrédients
 
