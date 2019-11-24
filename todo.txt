@@ -16,3 +16,4 @@ TECHNIQUE :
   - recherche de recette par filtre + du résultat le plus proche au résultat le plus éloigné
   - ajout PARTOUT de htmlspecialchars() sur les $_POST et $_GET et vérifier globalement la sécurité du site
   - faire une interface utilisateur qui permet à l'utilisateur de modifier ses données personnelles et accéder à ses recettes favorites (à voir comment faire quand pas connecté, on affiche où ?)
+  - la connexion après création de compte bug
