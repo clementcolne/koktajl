@@ -7,10 +7,11 @@ VISUEL :
   - changer la position de l'image dans la page de recette, c'est moche, pas visible si bcp d'ingrédients
 
 TECHNIQUE :
-  - compte utilisateur (création de compte + authentification)
+  - compte utilisateur : ajouter un visuel indiquant que l'utilisateur est connecté ou s'est créé un compte (prénom + nom affiché en haut si connecté, et visuel lorsqu'une connecion/création de compte est réussie, ou quand elle fail)
   - gestion des recettes préférées
     - ajouter un panier des recettes préférées
     - si connecté alors ajouter dans la DB le titre de la recette préférée
     - si pas connecté, ajouter le titre des recettes préférées dans un cookie SESSION
   - recherche de recette par mot clé
   - recherche de recette par filtre + du résultat le plus proche au résultat le plus éloigné
+  - ajout PARTOUT de htmlspecialchars() sur les $_POST et $_GET et vérifier globalement la sécurité du site
