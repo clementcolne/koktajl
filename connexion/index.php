@@ -54,13 +54,35 @@
                     <div class="col-12 col-sm-6">
                         <div class="breaking-news">
                             <div id="breakingNewsTicker" class="ticker">
-                              <ul>
-                                  <li><a href="../">Bienvenue !</a></li>
-                                  <li><a href="../recette/index.php?nomCocktail=Bloody Mary&pathImg=Bloody_mary">La recette du mois : Le Bloody Mary</a></li>
-                              </ul>
+                                <ul>
+                                  <li>
+                                    <?php
+                                    if(isset($_SESSION['nom']) && isset($_SESSION['prenom'])) {
+                                      echo "Bienvenue " . $_SESSION['nom'] . " " . $_SESSION['prenom'];
+                                    }else{
+                                      echo "Bienvenue ";
+                                    }
+                                    ?>
+                                  </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+
+                    <?php
+                      if(isset($_SESSION['estConnecte'])) {
+                        if($_SESSION['estConnecte'] == "1") {
+                          // utilisateur non connecté, on propose de se connecter
+                          echo "<a href='../assets/functions/deconnexion.php?path=../../toutes-nos-recettes/'><div class='text-right'>Déconnexion</div></a>";
+                        }else{
+                          // utilisateur non connecté, on propose de se connecter
+                          echo "<a href='../connexion/'><div class='text-right'>Connexion</div></a>";
+                        }
+                      }else{
+                        // utilisateur non connecté, on propose de se connecter
+                        echo "<a href='../connexion/'><div class='text-right'>Connexion</div></a>";
+                      }
+                    ?>
 
                 </div>
             </div>
@@ -92,46 +114,14 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="./">Accueil</a></li>
-                                    <li><a href="../toutes-nos-recettes/index.php">Tous nos cocktails</a></li>
-                                    <li><a href="#">Ingredient</a>
-                                        <ul class="dropdown">
-                                            <li><a href="#">Fruit</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="#">Agrumes</a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="index.html">Pamplemousse</a></li>
-                                                            <li><a href="about.html">Citron</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="about.html">Jus de fruit</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Liquides</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="#">Liquide avec alcool</a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="index.html">Rhum</a></li>
-                                                            <li><a href="about.html">Malibu</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Liquide sans alcool</a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="index.html">Jus de tomate</a></li>
-                                                            <li><a href="about.html">Coca-Cola</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Produit laitier</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="index.html">Lait</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="receipe-post.html">Nos cocktails sans alcool</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="../">Accueil</a></li>
+                                    <li><a href="../toutes-nos-recettes/">Tous nos cocktails</a></li>
+                                    <li><a href="#">A propos</a></li>
+                                    <?php
+                                    if(isset($_SESSION['estConnecte']) && $_SESSION['estConnecte'] == "1") {
+                                      echo "<li><a href='#'>Mon compte</a></li>";
+                                    }
+                                    ?>
                                 </ul>
 
                                 <!-- Newsletter Form -->
@@ -167,12 +157,12 @@
                             <div class="row">
                                 <div class="col-12 col-lg-3"></div>
                                 <div class="col-12 col-lg-6">
-                                    <input type="email" class="form-control" name="email" placeholder="entrer votre mail">
+                                    <input type="email" class="form-control" name="email" placeholder="entrer votre mail" required>
                                 </div>
                                 <div class="col-12 col-lg-3"></div>
                                 <div class="col-12 col-lg-3"></div>
                                 <div class="col-12 col-lg-6">
-                                    <input type="password" class="form-control" name="mdp" placeholder="entrer votre mot de passe">
+                                    <input type="password" class="form-control" name="mdp" placeholder="entrer votre mot de passe" required>
                                 </div>
                                 <div class="col-12 text-center">
                                     <button class="btn delicious-btn mt-30" type="submit">Connexion</button>
@@ -195,15 +185,6 @@
         <div class="container h-100">
             <div class="row h-100">
                 <div class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between">
-                    <!-- Footer Social Info -->
-                    <div class="footer-social-info text-right">
-                        <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                    </div>
                     <!-- Footer Logo -->
                     <div class="footer-logo">
                         <a href="index.html"><img src="../assets/images/img/core-img/logo_koktalj.png" alt=""></a>

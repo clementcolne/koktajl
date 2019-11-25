@@ -67,32 +67,38 @@
                         <div class="breaking-news">
                             <div id="breakingNewsTicker" class="ticker">
                                 <ul>
-                                    <li><a href="./">Bienvenue !</a></li>
-                                    <li><a a href="../recette/index.php?nomCocktail=Bloody Mary&pathImg=Bloody_mary">La recette du mois : Le bloody mary</a></li>
+                                  <li>
+                                    <?php
+                                    if(isset($_SESSION['nom']) && isset($_SESSION['prenom'])) {
+                                      echo "Bienvenue " . $_SESSION['nom'] . " " . $_SESSION['prenom'];
+                                    }else{
+                                      echo "Bienvenue ";
+                                    }
+                                    ?>
+                                  </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+
+                    <?php
+                      if(isset($_SESSION['estConnecte'])) {
+                        if($_SESSION['estConnecte'] == "1") {
+                          // utilisateur non connecté, on propose de se connecter
+                          echo "<a href='../assets/functions/deconnexion.php?path=../../toutes-nos-recettes/'><div class='text-right'>Déconnexion</div></a>";
+                        }else{
+                          // utilisateur non connecté, on propose de se connecter
+                          echo "<a href='../connexion/'><div class='text-right'>Connexion</div></a>";
+                        }
+                      }else{
+                        // utilisateur non connecté, on propose de se connecter
+                        echo "<a href='../connexion/'><div class='text-right'>Connexion</div></a>";
+                      }
+                    ?>
+
                 </div>
             </div>
         </div>
-
-        <p>
-          <?php
-            if(isset($_SESSION['estConnecte'])) {
-              if($_SESSION['estConnecte'] == 1) { // utilisateur connecté
-                if(isset($_SESSION['nom'])) {
-                  echo "Connecté en tant que " . $_SESSION['nom'];
-                }
-                if(isset($_SESSION['prenom'])) {
-                  echo " " . $_SESSION['prenom'];
-                }
-              }
-            }else{
-              echo "Non connecté";
-            }
-          ?>
-        </p>
 
         <!-- Navbar Area -->
         <div class="delicious-main-menu">
@@ -122,44 +128,12 @@
                                 <ul>
                                     <li><a href="../">Accueil</a></li>
                                     <li class="active"><a href="./">Tous nos cocktails</a></li>
-                                    <li><a href="#">Ingredient</a>
-                                        <ul class="dropdown">
-                                            <li><a href="#">Fruit</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="#">Agrumes</a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="index.html">Pamplemousse</a></li>
-                                                            <li><a href="about.html">Citron</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="about.html">Jus de fruit</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Liquides</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="#">Liquide avec alcool</a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="index.html">Rhum</a></li>
-                                                            <li><a href="about.html">Malibu</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Liquide sans alcool</a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="index.html">Jus de tomate</a></li>
-                                                            <li><a href="about.html">Coca-Cola</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Produit laitier</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="index.html">Lait</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="receipe-post.html">Nos cocktails sans alcool</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="#">A propos</a></li>
+                                    <?php
+                                    if(isset($_SESSION['estConnecte']) && $_SESSION['estConnecte'] == "1") {
+                                      echo "<li><a href='#'>Mon compte</a></li>";
+                                    }
+                                    ?>
                                 </ul>
 
                                 <!-- Newsletter Form -->
@@ -209,12 +183,12 @@
 
                 <div class='col-12 col-sm-6 col-lg-4'>
                     <div class='single-best-receipe-area mb-30'>
+                      <a href='../recette/index.php?nomCocktail=" . $nomCocktail . "&pathImg=" . $pathImg . "'>
                         <img class='resize-img' src='../assets/images/Photos/" . $pathImg . ".jpg'>
                         <div class='receipe-content'>
-                            <a href='../recette/index.php?nomCocktail=" . $nomCocktail . "&pathImg=" . $pathImg . "'>
                                 <h5>" . $nomCocktail . "</h5>
-                            </a>
                         </div>
+                      </a>
                     </div>
                 </div>";
 

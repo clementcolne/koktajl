@@ -63,16 +63,6 @@
     return $pathImg;
   }
 
-  /**
-   * déconnecte un utilisateur
-   */
-  function deconnexion() {
-    $_SESSION['estConnecte'] = "0"; // utilisateur déconnecté
-    // reset du nom et du prénom
-    $_SESSION['nom'] = "";
-    $_SESSION['prenom'] = "";
-  }
-
   // TODO fonction faite fatigué, la façon de faire est surement dégueulasse
   // à revoir, finir si bonne façon de faire, refaire entièrement sinon
   /*function ajouterAuxFavoris($nomRecette) {

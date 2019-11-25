@@ -56,8 +56,8 @@
     // compte créé et ajouté dans la DB
     // ajout des informations de l'utilisateur connecté dans le cookie $_SESSION
     $_SESSION['estConnecte'] = "1"; // utilisateur connecté
-    $_SESSION['prenom'] = $reponse['prenom'];
-    $_SESSION['nom'] = $reponse['nom'];
+    $_SESSION['prenom'] = $prenom;
+    $_SESSION['nom'] = $nom;
     // retour à la page d'accueil
     header('Location: ../../index.php?');
     // TODO : ajout aux cookies création réussie + connexion + message de succès (trouver une façon jolie de faire)
