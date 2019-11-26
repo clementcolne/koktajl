@@ -1,7 +1,0 @@
-/* style ajouté par dessus le style du template */
-/* à importer après le style du template pour qu'il soit effectif */
-
-.resize-img {
-  height: 350px;
-  width: 350px;
-}
