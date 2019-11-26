@@ -11,7 +11,5 @@ TECHNIQUE :
   - recherche de recette par mot clé
   - recherche de recette par filtre + du résultat le plus proche au résultat le plus éloigné
   - faire une interface utilisateur qui permet à l'utilisateur de modifier ses données personnelles et accéder à ses recettes favorites et supprimer son compte
-  - Ajouter Try/Catch autour de chaque execute
-
-GADY : 
-  - 
+  - ajouter Try/Catch autour de chaque execute SQL
+  - mettre bouton en "retirer recette des favoris" si déjà aux favoris
