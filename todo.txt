@@ -6,10 +6,11 @@ VISUEL :
 TECHNIQUE :
   - utilisateur par adresse unique + vérifier que adresse et adresseConfirmée et mdp et mdpConfirmé sont identiques avant validation du formulaire vers creation de compte
   - gestion des recettes préférées
-    (- ajouter un panier des recettes préférées)
     - si connecté alors ajouter dans la DB le titre de la recette préférée
     - si pas connecté, ajouter le titre des recettes préférées dans un cookie SESSION
   - recherche de recette par mot clé
   - recherche de recette par filtre + du résultat le plus proche au résultat le plus éloigné
-  - ajout PARTOUT de htmlspecialchars() sur les $_POST et $_GET et vérifier globalement la sécurité du site
-  - faire une interface utilisateur qui permet à l'utilisateur de modifier ses données personnelles et accéder à ses recettes favorites
+  - faire une interface utilisateur qui permet à l'utilisateur de modifier ses données personnelles et accéder à ses recettes favorites et supprimer son compte
+
+GADY : 
+  - ajouter un fichier index.html vide dans TOUS les dossiers du projet ne contenant pas déjà un fichier index.html OU index.php
