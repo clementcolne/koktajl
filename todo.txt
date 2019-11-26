@@ -1,15 +1,11 @@
 TODO
 
-VISUEL :
-  - (à voir en fait pas si mal) changer la position de l'image dans la page de recette, c'est moche, pas visible si bcp d'ingrédients
-
 TECHNIQUE :
-  - utilisateur par adresse unique + vérifier que adresse et adresseConfirmée et mdp et mdpConfirmé sont identiques avant validation du formulaire vers creation de compte
   - gestion des recettes préférées
-    - si connecté alors ajouter dans la DB le titre de la recette préférée
     - si pas connecté, ajouter le titre des recettes préférées dans un cookie SESSION
   - recherche de recette par mot clé
   - recherche de recette par filtre + du résultat le plus proche au résultat le plus éloigné
-  - faire une interface utilisateur qui permet à l'utilisateur de modifier ses données personnelles et accéder à ses recettes favorites et supprimer son compte
   - ajouter Try/Catch autour de chaque execute SQL
+  
+ GADY :
   - mettre bouton en "retirer recette des favoris" si déjà aux favoris
