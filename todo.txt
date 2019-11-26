@@ -13,4 +13,4 @@ TECHNIQUE :
   - faire une interface utilisateur qui permet à l'utilisateur de modifier ses données personnelles et accéder à ses recettes favorites et supprimer son compte
 
 GADY : 
-  - ajouter un fichier index.html contenant un redirect vers la page d'accueil dans TOUS les dossiers du projet ne contenant pas déjà un fichier index.html OU index.php
+  - 
