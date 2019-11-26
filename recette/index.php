@@ -190,7 +190,8 @@
                               // AUTRE ENDROIT OU L'IMAGE POURRAIT ÊTRE PLACEE
                               //echo "<img class='resize-img' src='../datas/Photos/" . $pathImg . ".jpg'></img>";
                             ?>
-                            <a href="#" class="btn delicious-btn">Ajouter aux recettes favorites</a>
+                            <a href="../assets/functions/ajouter-cocktail-prefere.php?nomCocktail=<?php echo $nomCocktail;?>&pathImg=<?php echo $pathImg; ?>" class="btn delicious-btn">Ajouter aux recettes favorites</a>
+                            <!-- POUR TOI ICI GADY BOUTON SUPPRIMER DES FAVORIS -->
                         </div>
                     </div>
 

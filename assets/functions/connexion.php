@@ -39,6 +39,7 @@
       $_SESSION['estConnecte'] = "1"; // utilisateur connecté
       $_SESSION['prenom'] = $reponse['prenom'];
       $_SESSION['nom'] = $reponse['nom'];
+      $_SESSION['mail'] = $reponse['id'];
       // retour page d'accueil
       header('Location: ../../index.php');
       // TODO : ajout aux cookies connexion réussie + message de succès (trouver une façon jolie de faire)

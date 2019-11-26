@@ -20,6 +20,11 @@
 </head>
 
 <body>
+    <?php
+      if(isset($_GET['erreur'])) {
+        echo $_GET['erreur'];
+      }
+     ?>
     <!-- Preloader -->
     <div id="preloader">
         <i class="circle-preloader"></i>
@@ -172,17 +177,7 @@
                                 <div class="col-12 col-lg-3"></div>
                                 <div class="col-12 col-lg-3"></div>
                                 <div class="col-12 col-lg-6">
-                                    <input type="email" class="form-control" name="emailConfirme" placeholder="confirmer l'adresse mail" required>
-                                </div>
-                                <div class="col-12 col-lg-3"></div>
-                                <div class="col-12 col-lg-3"></div>
-                                <div class="col-12 col-lg-6">
                                     <input type="password" class="form-control" name="mdp" placeholder="mot de passe" required>
-                                </div>
-                                <div class="col-12 col-lg-3"></div>
-                                <div class="col-12 col-lg-3"></div>
-                                <div class="col-12 col-lg-6">
-                                    <input type="password" class="form-control" name="mdpConfirme" placeholder="confirmer le mot de passe" required>
                                 </div>
                                 <div class="col-12 text-center">
                                     <button class="btn delicious-btn mt-30" type="submit">Créer un compte</button>
@@ -205,18 +200,9 @@
         <div class="container h-100">
             <div class="row h-100">
                 <div class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between">
-                    <!-- Footer Social Info -->
-                    <div class="footer-social-info text-right">
-                        <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                    </div>
                     <!-- Footer Logo -->
                     <div class="footer-logo">
-                        <a href="index.html"><img src="../assets/images/img/core-img/logo_koktalj.png" alt=""></a>
+                        <a href="../"><img src="../assets/images/img/core-img/logo_koktalj.png" alt=""></a>
                     </div>
                     <!-- Copywrite -->
                     <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->

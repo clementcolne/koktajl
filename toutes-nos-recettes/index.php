@@ -181,16 +181,16 @@
 
                   echo "
 
-                <div class='col-12 col-sm-6 col-lg-4'>
-                    <div class='single-best-receipe-area mb-30'>
-                      <a href='../recette/index.php?nomCocktail=" . $nomCocktail . "&pathImg=" . $pathImg . "'>
-                        <img class='resize-img' src='../assets/images/Photos/" . $pathImg . ".jpg'>
-                        <div class='receipe-content'>
-                                <h5>" . $nomCocktail . "</h5>
+                    <div class='col-12 col-sm-6 col-lg-4'>
+                        <div class='single-best-receipe-area mb-30'>
+                          <a href='../recette/index.php?nomCocktail=" . $nomCocktail . "&pathImg=" . $pathImg . "'>
+                            <img class='resize-img' src='../assets/images/Photos/" . $pathImg . ".jpg'>
+                            <div class='receipe-content'>
+                              <h5>" . $nomCocktail . "</h5>
+                            </div>
+                          </a>
                         </div>
-                      </a>
-                    </div>
-                </div>";
+                    </div>";
 
                 }
                 ?>

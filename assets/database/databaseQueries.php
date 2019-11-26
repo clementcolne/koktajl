@@ -38,6 +38,12 @@
         PRIMARY KEY(nomCategorie, nomSuperCategorie),
         FOREIGN KEY(nomCategorie) REFERENCES ingredient(nomIngredient),
         FOREIGN KEY(nomSuperCategorie) REFERENCES ingredient(nomIngredient)
+      );
+      CREATE TABLE cocktailsPreferes (
+        id varchar(100),
+        nomCocktail varchar(100),
+        FOREIGN KEY(id) REFERENCES user(id),
+        FOREIGN KEY(nomCocktail) REFERENCES cocktail(nomCocktail)
       )
     ";
 
