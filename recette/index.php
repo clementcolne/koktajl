@@ -133,10 +133,10 @@
                                 <ul>
                                     <li><a href="../">Accueil</a></li>
                                     <li><a href="./">Tous nos cocktails</a></li>
-                                    <li><a href="#">A propos</a></li>
+                                    <li><a href="../recettes-favorites/">Mes recettes <i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
                                     <?php
                                     if(isset($_SESSION['estConnecte']) && $_SESSION['estConnecte'] == "1") {
-                                      echo "<li><a href='#'>Mon compte</a></li>";
+                                      echo "<li><a href='../compte/'>Mon compte</a></li>";
                                     }
                                     ?>
                                 </ul>
