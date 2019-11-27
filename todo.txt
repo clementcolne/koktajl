@@ -6,6 +6,8 @@ TECHNIQUE :
   - recherche de recette par mot clé
   - recherche de recette par filtre + du résultat le plus proche au résultat le plus éloigné
   - ajouter Try/Catch autour de chaque execute SQL
+  - maj user : bug lors du changement d'adresse mail : pas pris en compte dans la DB, vérifier la requête sql + les changements des autres informaitons + changement uniquement si adresse pas déjà utilisée
+  - affichage des erreurs $_GET['erreur'] dans la page de connexion, creation compte et compte
   
  GADY :
   - mettre bouton en "retirer recette des favoris" si déjà aux favoris
