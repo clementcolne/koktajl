@@ -13,17 +13,18 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Koktajl - Cocktail Blog | Accueil</title>
+    <title>Koktajl - Cocktail Blog | Mon compte</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="./assets/images/img/core-img/favicon.ico">
+    <link rel="icon" href="../assets/images/img/core-img/favicon.ico">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/monStyle.css">
 
     <?php
       // includes
-      include './assets/functions/functions.php';
+      include '../assets/functions/functions.php';
       // connexion à la base de données
       $db = databaseConnect();
     ?>
@@ -34,7 +35,7 @@
     <!-- Preloader -->
     <div id="preloader">
         <i class="circle-preloader"></i>
-        <img src="./assets/images/img/core-img/salad.png" alt="">
+        <img src="../assets/images/img/core-img/salad.png" alt="">
     </div>
 
     <!-- ##### Header Area Start ##### -->
@@ -67,14 +68,14 @@
                       if(isset($_SESSION['estConnecte'])) {
                         if($_SESSION['estConnecte'] == "1") {
                           // utilisateur non connecté, on propose de se connecter
-                          echo "<a href='./assets/functions/deconnexion.php?path=../../'><div class='text-right'>Déconnexion</div></a>";
+                          echo "<a href='../assets/functions/deconnexion.php?path=../../toutes-nos-recettes/'><div class='text-right'>Déconnexion</div></a>";
                         }else{
                           // utilisateur non connecté, on propose de se connecter
-                          echo "<a href='./connexion/'><div class='text-right'>Connexion</div></a>";
+                          echo "<a href='../connexion/'><div class='text-right'>Connexion</div></a>";
                         }
                       }else{
                         // utilisateur non connecté, on propose de se connecter
-                        echo "<a href='./connexion/'><div class='text-right'>Connexion</div></a>";
+                        echo "<a href='../connexion/'><div class='text-right'>Connexion</div></a>";
                       }
                     ?>
 
@@ -90,7 +91,7 @@
                     <nav class="classy-navbar justify-content-between" id="deliciousNav">
 
                         <!-- Logo -->
-                        <a class="nav-brand" href="./"><img src="./assets/images/img/core-img/logo_koktalj.png" alt=""></a>
+                        <a class="nav-brand" href="../"><img src="../assets/images/img/core-img/logo_koktalj.png" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -108,12 +109,12 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="./">Accueil</a></li>
-                                    <li><a href="./toutes-nos-recettes/">Tous nos cocktails</a></li>
-                                    <li><a href="./recettes-favorites/">Mes recettes <i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                    <li><a href="../">Accueil</a></li>
+                                    <li><a href="../toutes-nos-recettes/">Tous nos cocktails</a></li>
+                                    <li><a href="../recettes-favorites/">Mes recettes <i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
                                     <?php
                                     if(isset($_SESSION['estConnecte']) && $_SESSION['estConnecte'] == "1") {
-                                      echo "<li><a href='./compte/'>Mon compte</a></li>";
+                                      echo "<li class='active'><a href='./'>Mon compte</a></li>";
                                     }
                                     ?>
                                 </ul>
@@ -128,82 +129,71 @@
     </header>
     <!-- ##### Header Area End ##### -->
 
-    <!-- ##### Hero Area Start ##### -->
-    <section class="hero-area">
-        <div class="hero-slides owl-carousel">
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img" style="background-image: url(./assets/images/img/blog-img/accueil.jpg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                            <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
-                                <h2 data-animation="fadeInUp" data-delay="300ms">La recette du mois</h2>
-                                <p data-animation="fadeInUp" data-delay="700ms">Découvrez la recette du mois, la délicieuse recette du Bloody Mary. Un subtil mélange entre le jus de tomate, le piment et la vodka.</p>
-                                <a href="./recette/index.php?nomCocktail=Bloody Mary&pathImg=Bloody_mary" class="btn delicious-btn" data-animation="fadeInUp" data-delay="1000ms">Découvrir</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <!-- ##### Hero Area End ##### -->
-
-    <!-- ##### Top Catagory Area Start ##### -->
-    <section class="top-catagory-area section-padding-80-0">
+    <!-- ##### About Area Start ##### -->
+    <section class="about-area section-padding-80">
         <div class="container">
             <div class="row">
-                  <div class="col-12">
-                      <div class="section-heading">
-                          <h3>Nos suggestions</h3>
-                      </div>
-                  </div>
-                <!-- Top Catagory Area -->
-                <div class="col-12 col-lg-6">
-                    <div class="single-top-catagory">
-                        <img src="./assets/images/img/blog-img/mojito.jpg" alt="">
-                        <!-- Content -->
-                        <div class="top-cta-content">
-                            <h3>Piña Colada</h3>
-                            <h6>Simple &amp; Délicieuse</h6>
-                            <a href="./recette/index.php?nomCocktail=Piña Colada&pathImg=Pina_colada" class="btn delicious-btn">Découvrez la recette</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Top Catagory Area -->
-                <div class="col-12 col-lg-6">
-                    <div class="single-top-catagory">
-                        <img src="./assets/images/img/blog-img/mojito.jpg" alt="">
-                        <!-- Content -->
-                        <div class="top-cta-content">
-                            <h3>Mojito</h3>
-                            <h6>Frais &amp; Intriguant</h6>
-                            <a href="./recette/index.php?nomCocktail=Mojito&pathImg=Mojito" class="btn delicious-btn">See Full Receipe</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ##### Top Catagory Area End ##### -->
-
-    <!-- ##### CTA Area Start ##### -->
-    <section class="cta-area bg-img bg-overlay" style="background-image: url(./assets/images/img/blog-img/accueil.jpg);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
                 <div class="col-12">
-                    <!-- Cta Content -->
-                    <div class="cta-content text-center">
-                        <h2>Des dizaines de recettes</h2>
-                        <p>Découvrez toutes nos recettes de cocktails, avec ou sans alcool, revisités par nos chefs pour votre plaisir.</br>L’abus d’alcool est dangereux pour la santé. À consommer avec modération.</p>
-                        <a href="./toutes-nos-recettes/index.php" class="btn delicious-btn">Découvrez toutes nos recettes</a>
+                    <div class="section-heading">
+                        <h3>Mes informations</h3>
                     </div>
                 </div>
             </div>
-        </div>
+
+            <?php
+              // récupère toutes les informations d'un utilisateur
+              $nom = $_SESSION['nom'];
+              $prenom = $_SESSION['prenom'];
+              $mail = $_SESSION['mail'];
+             ?>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="contact-form-area">
+                        <form action="../assets/functions/maj_user.php" method="post">
+                            <div class="row">
+                                <div class="col-12 col-lg-3"></div>
+                                <div class="col-12 col-lg-6">
+                                    <?php
+                                      if(isset($_GET['erreurMail'])) {
+                                        echo "
+                                          <div class='text-center' style='color:red;'>" . $_GET['erreurMail'] . "</div></br>
+                                        ";
+                                      }else if(isset($_GET['success'])) {
+                                        echo "
+                                          <div class='text-center' style='color:green;'>" . $_GET['success'] . "</div></br>
+                                        ";
+                                      }
+                                    ?>
+                                    <input type="text" class="form-control" name="prenom" value="<?php echo $prenom; ?>">
+                                </div>
+                                <div class="col-12 col-lg-3"></div>
+                                <div class="col-12 col-lg-3"></div>
+                                <div class="col-12 col-lg-6">
+                                    <input type="text" class="form-control" name="nom" value="<?php echo $nom; ?>">
+                                </div>
+                                <div class="col-12 col-lg-3"></div>
+                                <div class="col-12 col-lg-3"></div>
+                                <div class="col-12 col-lg-6">
+                                    <input type="email" class="form-control" name="email" value="<?php echo $mail; ?>" required>
+                                </div>
+                                <div class="col-12 col-lg-3"></div>
+                                <div class="col-12 col-lg-3"></div>
+                                <div class="col-12 col-lg-6">
+                                    <input type="password" class="form-control" name="mdp" placeholder="nouveau mot de passe" required>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button class="btn delicious-btn mt-30" type="submit">Mettre à jour mes informations</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+          </div>
     </section>
-    <!-- ##### CTA Area End ##### -->
+    <!-- ##### About Area End ##### -->
 
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
@@ -212,7 +202,7 @@
                 <div class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between">
                     <!-- Footer Logo -->
                     <div class="footer-logo">
-                        <a href="./"><img src="./assets/images/img/core-img/logo_koktalj.png" alt=""></a>
+                        <a href="../"><img src="../assets/images/img/core-img/logo_koktalj.png" alt=""></a>
                     </div>
                     <!-- Copywrite -->
                     <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -226,15 +216,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
     <!-- ##### All Javascript Files ##### -->
     <!-- jQuery-2.2.4 js -->
-    <script src="./assets/js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="../assets/js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
-    <script src="./assets/js/bootstrap/popper.min.js"></script>
+    <script src="../assets/js/bootstrap/popper.min.js"></script>
     <!-- Bootstrap js -->
-    <script src="./assets/js/bootstrap/bootstrap.min.js"></script>
+    <script src="../assets/js/bootstrap/bootstrap.min.js"></script>
     <!-- All Plugins js -->
-    <script src="./assets/js/plugins/plugins.js"></script>
+    <script src="../assets/js/plugins/plugins.js"></script>
     <!-- Active js -->
-    <script src="./assets/js/active.js"></script>
+    <script src="../assets/js/active.js"></script>
 </body>
 
 </html>
