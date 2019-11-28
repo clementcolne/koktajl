@@ -9,31 +9,35 @@
   // connexion à la DB
   $db = databaseConnect();
 
-  if(isset($_SESSION['estConnecte']) && $_SESSION['estConnecte'] == "1") {
-    // l'utilisateur est connecté, alors ajout dans la base de données
-    if(isset($_GET['nomCocktail']) && isset($_GET['pathImg'])) {
-      $nomCocktail = $_GET['nomCocktail'];
-      $pathImg = $_GET['pathImg'];
-      $id = $_SESSION['mail'];
-      $sql = $db->prepare("SELECT * FROM cocktailsPreferes WHERE id = :id");
-      $sql->bindParam('id', $id);
-      $sql->execute();
-      while($reponse = $sql->fetch()) {
-        if($reponse['nomCocktail'] == $nomCocktail) {
-          header("Location: ../../recette/index.php?nomCocktail=$nomCocktail&pathImg=$pathImg");
-          exit();
+  if(isset($_SESSION['estConnecte'])) {
+    if($_SESSION['estConnecte'] == "1") {
+      // l'utilisateur est connecté, alors ajout dans la base de données
+      if(isset($_GET['nomCocktail'])) {
+        if(isset($_GET['pathImg'])) {
+          $nomCocktail = $_GET['nomCocktail'];
+          $pathImg = $_GET['pathImg'];
+          $id = $_SESSION['mail'];
+          $sql = $db->prepare("SELECT * FROM cocktailsPreferes WHERE id = :id");
+          $sql->bindParam('id', $id);
+          $sql->execute();
+          while($reponse = $sql->fetch()) {
+            if($reponse['nomCocktail'] == $nomCocktail) {
+              header("Location: ../../recette/index.php?nomCocktail=$nomCocktail&pathImg=$pathImg");
+              exit();
+            }
+          }
+          $sql = $db->prepare("INSERT INTO cocktailsPreferes(id, nomCocktail) VALUES (:id, :nomCocktail)");
+          $sql->bindParam(':id', $id);
+          $sql->bindParam(':nomCocktail', $nomCocktail);
+          try {
+            $sql->execute(array(
+              'id' => $id,
+              'nomCocktail' => $nomCocktail
+            ));
+          }catch(Exception $e) {
+            echo "Erreur : $e->getMessage()";
+          }
         }
-      }
-      $sql = $db->prepare("INSERT INTO cocktailsPreferes(id, nomCocktail) VALUES (:id, :nomCocktail)");
-      $sql->bindParam(':id', $id);
-      $sql->bindParam(':nomCocktail', $nomCocktail);
-      try {
-        $sql->execute(array(
-          'id' => $id,
-          'nomCocktail' => $nomCocktail
-        ));
-      }catch(Exception $e) {
-        echo "Erreur : $e->getMessage()";
       }
     }
   }else{

@@ -164,8 +164,22 @@
 
                     <div class="col-12 col-md-4">
                         <div class="receipe-ratings text-right my-5">
-                            <a href="../assets/functions/ajouter-cocktail-prefere.php?nomCocktail=<?php echo $nomCocktail;?>&pathImg=<?php echo $pathImg; ?>&file=../../recettes-favorites/" class="btn delicious-btn">Ajouter aux recettes favorites</a>
-                            <!-- POUR TOI ICI GADY BOUTON SUPPRIMER DES FAVORIS -->
+                          <?php
+                            $sql = $db->prepare("SELECT * FROM cocktailsPreferes WHERE id = :id AND nomCocktail = :nomCocktail");
+                            $sql->bindParam('id', $_SESSION['mail']);
+                            $sql->bindParam('nomCocktail', $nomCocktail);
+                            try {
+                              $sql->execute();
+                            }catch(Exception $e) {
+                              echo $e->getMessage();
+                            }
+
+                            if($result = $sql->fetch()) {
+                              echo "<a href='../assets/functions/supprimer-cocktail-prefere.php?nomCocktail=$nomCocktail&pathImg=$pathImg' class='btn delicious-btn'>Supprimer des recettes favorites</a> ";
+                            }else{
+                              echo "<a href='../assets/functions/ajouter-cocktail-prefere.php?nomCocktail=$nomCocktail&pathImg=$pathImg' class='btn delicious-btn'>Ajouter aux recettes favorites</a> ";
+                            }
+                          ?>
                         </div>
                     </div>
 
