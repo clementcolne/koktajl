@@ -1,6 +1,12 @@
 <?php
 
-  // TODO : ajouter cocktail préféré quand on est pas connecté
+/**
+ * Ce fichier permet d'ajouter un cocktail à la liste des cocktails préférés
+ * Si l'utilisateur est connecté, alors l'ajout se fait dans la base de données
+ * Si l'utilisateur n'est pas connecté, l'ajout se fait dans un cookie $_SESSION
+ * et les recettes seront ajoutées à un compte si l'utilisateur se connecte
+ * durant la vie de sa session
+ */
 
   // ouverture du cookie $_SESSION
   session_start();
@@ -30,10 +36,7 @@
           $sql->bindParam(':id', $id);
           $sql->bindParam(':nomCocktail', $nomCocktail);
           try {
-            $sql->execute(array(
-              'id' => $id,
-              'nomCocktail' => $nomCocktail
-            ));
+            $sql->execute();
           }catch(Exception $e) {
             echo "Erreur : $e->getMessage()";
           }

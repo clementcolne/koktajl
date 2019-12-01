@@ -1,10 +1,12 @@
 <?php
 
+
   // ouverture du cookie $_SESSION
   session_start();
 
   /**
-   * déconnecte un utilisateur
+   * Déconnecte un utilisateur
+   * en vidant le cookie $_SESSION
    */
   function deconnexion() {
     setcookie (session_id(), "", time() - 3600);

@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Ce fichier permet à un utilisateur de se créer un compte
+ * Si des informations sont manquantes, alors l'utilisateur est redirigé vers
+ * la page de création de compte avec les informations sur les paramètres erronés
+ * sinon l'utilisateur est connecté puis redirigé à la page d'accueil
+ */
+
   // ouverture du cookie $_SESSION
   session_start();
   // includes
@@ -19,8 +26,9 @@
 
     // on vérifie qu'il n'y a pas déjà un compte existant dans la DB (car compte unique par adresse maim)
     $sql = $db->prepare('SELECT * FROM user WHERE id = :mail');
+    $sql->bindParam(':id', $mail);
     try {
-      $sql->execute(array('mail' => $mail));
+      $sql->execute();
     }catch(Exception $e) {
       echo "Erreur : $e->getMessage()";
     }

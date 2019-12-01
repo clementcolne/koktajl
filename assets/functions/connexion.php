@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Ce fichier effectue la connexion d'un utilisateur à son compte
+ * si les données concordent avec la base de données, alors l'utilisateur
+ * est redirigé sur la page d'accueil
+ * sinon, l'utilisateur est redirigé sur la page de connexion avec le message
+ * informant des paramètres manquants ou faux
+ */
+
   // ouverture du cookie $_SESSION
   session_start();
   // includes
@@ -18,8 +26,9 @@
 
     // récupère l'ensemble des informations sur les utilisateurs correspondantes au mail de l'utilisateur
     $sql = $db->prepare('SELECT * FROM user WHERE id = :mail');
+    $sql->bindParam(':id', $mail);
     try {
-      $sql->execute(array('mail' => $mail));
+      $sql->execute();
     }catch(Exception $e) {
       echo "Erreur : $e->getMessage()";
     }
@@ -68,7 +77,6 @@
         }
         // retour page d'accueil
         header('Location: ../../index.php');
-        // TODO : ajout aux cookies connexion réussie + message de succès (trouver une façon jolie de faire)
       }else{
         // mail bon, mot de passe mauvais
         header('Location: ../../connexion/index.php?erreurMdp=mauvais mot de passe');

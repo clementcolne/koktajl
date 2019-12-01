@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Ce fichier met à jour les informations personnelles d'un utilisateur
+ */
+
   // ouverture du cookie $_SESSION
   session_start();
   // includes
@@ -18,9 +22,9 @@
     $mdp = htmlspecialchars($_POST['mdp']);
     $mdp_hash = password_hash($mdp, PASSWORD_DEFAULT);
     $sql = $db->prepare('UPDATE user SET mdp = :mdp WHERE id = :ancienMail');
+    $sql->bindParam(':mdp', $mdp_hash);
+    $sql->bindParam(':ancienMail', $ancienMail);
     try {
-      $sql->bindParam(':mdp', $mdp_hash);
-      $sql->bindParam(':ancienMail', $ancienMail);
       $sql->execute();
     }catch(Exception $e) {
       echo "Erreur : $e->getMessage()";
@@ -30,9 +34,9 @@
   if(isset($_POST['nom'])) {
     $nom = htmlspecialchars($_POST['nom']);
     $sql = $db->prepare('UPDATE user SET nom = :nom WHERE id = :ancienMail');
+    $sql->bindParam(':nom', $nom);
+    $sql->bindParam(':ancienMail', $ancienMail);
     try {
-      $sql->bindParam(':nom', $nom);
-      $sql->bindParam(':ancienMail', $ancienMail);
       $sql->execute();
     }catch(Exception $e) {
       echo "Erreur : $e->getMessage()";
@@ -42,9 +46,9 @@
   if(isset($_POST['prenom'])) {
     $prenom = htmlspecialchars($_POST['prenom']);
     $sql = $db->prepare('UPDATE user SET prenom = :prenom WHERE id = :ancienMail');
+    $sql->bindParam(':prenom', $prenom);
+    $sql->bindParam(':ancienMail', $ancienMail);
     try {
-      $sql->bindParam(':prenom', $prenom);
-      $sql->bindParam(':ancienMail', $ancienMail);
       $sql->execute();
     }catch(Exception $e) {
       echo "Erreur : $e->getMessage()";
@@ -68,18 +72,20 @@
     }
     // si l'utilisateur change d'adresse pour une nouvelle adresse
     $sql = $db->prepare('UPDATE user SET id = :id WHERE id = :ancienMail');
+    $sql->bindParam(':id', $id);
+    $sql->bindParam(':ancienMail', $ancienMail);
     try {
-      $sql->bindParam(':id', $id);
-      $sql->bindParam(':ancienMail', $ancienMail);
       $sql->execute();
     }catch(Exception $e) {
       echo "Erreur : $e->getMessage()";
     }
   }
 
+  // mise à jour des informations cookie $_SESSION utilisateur
   $_SESSION['prenom'] = $prenom;
   $_SESSION['nom'] = $nom;
   $_SESSION['mail'] = $id;
+
   // retour à la page du compte
   header('Location: ../../compte/index.php?success=changements effectués avec succès');
 
