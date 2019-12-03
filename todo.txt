@@ -1,10 +1,12 @@
 A FAIRE :
   - recherche de recette par mot clé
   - recherche de recette par filtre + du résultat le plus proche au résultat le plus éloigné
-  - ajout recette favorite avec bouton lorsque pas connecté (via cookie $_SESSION) -> non fonctionnel
+  - sécurité : que se passe-t-il quand on charge un script exprès sans paramètres ? à vérifier pour tous
   
 DERNIERES CHOSES REVUES QUI SONT OK :
   - documentation
   - commentaires
   - sécurité dans les requêtes sql (prepare, try/catch)
+  - ajout recette favorite avec bouton lorsque pas connecté (via cookie $_SESSION) -> non fonctionnel
+
 
