@@ -173,8 +173,8 @@
                             }catch(Exception $e) {
                               echo $e->getMessage();
                             }
-
-                            if($result = $sql->fetch()) {
+                            // bouton "ajouter aux favoris" si pas encore aux favoris, sinon retirer des favoris
+                            if($result = $sql->fetch() || est_favorite($nomCocktail)) {
                               echo "<a href='../assets/functions/supprimer-cocktail-prefere.php?nomCocktail=$nomCocktail&pathImg=$pathImg' class='btn delicious-btn'>Supprimer des recettes favorites</a> ";
                             }else{
                               echo "<a href='../assets/functions/ajouter-cocktail-prefere.php?nomCocktail=$nomCocktail&pathImg=$pathImg' class='btn delicious-btn'>Ajouter aux recettes favorites</a> ";

@@ -62,4 +62,23 @@
     return $pathImg;
   }
 
+  /**
+   * Cette fonction retourne vrai si la recette est aux favoris des cookies, faux sinon
+   * @return boolean
+   */
+  function est_favorite() {
+    // get de la recette à vérifier si elle est aux favoris
+    $recette_favorite = $_GET['nomCocktail'];
+    $est_fav = false;
+    // parcours de toutes les recettes favorites
+    for($i = 0 ; $i < $_SESSION['nbRecettesPreferees'] ; $i++) {
+      $recettePreferee = $_SESSION["recettePreferee$i"];
+      if($recettePreferee == $recette_favorite) {
+        // recette déjà aux favoris
+        $est_fav = true;
+      }
+    }
+    return $est_fav;
+  }
+
  ?>
