@@ -1,7 +1,9 @@
 A FAIRE :
   - recherche de recette par mot clé
   - recherche de recette par filtre + du résultat le plus proche au résultat le plus éloigné
-  - sécurité : que se passe-t-il quand on charge un script exprès sans paramètres ? à vérifier pour tous
+  - sécurité : que se passe-t-il quand on charge un script exprès sans paramètres ? à vérifier pour tous les scripts
+  - charger chaque page du site accessible à un utilisateur EN VIDANT A CHAQUE FOIS LE COOKIE SESSION pour simuler une première connexion (script pour clean cookie session dispo à la racine du projet)
+  - terminer le rapport du projet
   
 DERNIERES CHOSES REVUES QUI SONT OK :
   - documentation
