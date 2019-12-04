@@ -58,7 +58,7 @@
       header('Location: ../../index.php');
     }else{
       // compte déjà existant, redirect formulaire d'inscription
-      header('Location: ../../creer-un-compte/index.php?erreurcompte=Un compte est déjà lié à cette adresse mail');
+      header('Location: ../../creer-un-compte/index.php?erreurcompte=un compte est déjà lié à cette adresse mail');
     }
   }
 

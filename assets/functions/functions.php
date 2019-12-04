@@ -71,11 +71,13 @@
     $recette_favorite = $_GET['nomCocktail'];
     $est_fav = false;
     // parcours de toutes les recettes favorites
+    if(isset($_SESSION['nbRecettesPreferees'])) {
     for($i = 0 ; $i < $_SESSION['nbRecettesPreferees'] ; $i++) {
-      $recettePreferee = $_SESSION["recettePreferee$i"];
-      if($recettePreferee == $recette_favorite) {
-        // recette déjà aux favoris
-        $est_fav = true;
+        $recettePreferee = $_SESSION["recettePreferee$i"];
+        if($recettePreferee == $recette_favorite) {
+          // recette déjà aux favoris
+          $est_fav = true;
+        }
       }
     }
     return $est_fav;
