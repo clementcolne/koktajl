@@ -1,14 +1,6 @@
 A FAIRE :
   - recherche de recette par mot clé
   - recherche de recette par filtre + du résultat le plus proche au résultat le plus éloigné
-  - sécurité : que se passe-t-il quand on charge un script exprès sans paramètres ? à vérifier pour tous les scripts
   - terminer le rapport du projet
-  
-DERNIERES CHOSES REVUES QUI SONT OK :
-  - documentation
-  - commentaires
-  - sécurité dans les requêtes sql (prepare, try/catch)
-  - ajout recette favorite avec bouton lorsque pas connecté (via cookie $_SESSION) -> non fonctionnel
-  - charger chaque page du site accessible à un utilisateur EN VIDANT A CHAQUE FOIS LE COOKIE SESSION pour simuler une première connexion (script pour clean cookie session dispo à la racine du projet)
 
 
