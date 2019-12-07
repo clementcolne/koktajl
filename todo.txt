@@ -1,6 +1,7 @@
 A FAIRE :
-  - recherche de recette par mot clé
-  - recherche de recette par filtre + du résultat le plus proche au résultat le plus éloigné
+  - exclure un ingrédient dans recherche par mot clé
+  - complétion dans la recherche par mot clé
+  - recherche de recette par filtre
   - terminer le rapport du projet
 
 
