@@ -22,7 +22,7 @@ foreach(explode(';', createDatabase($databaseName)) as $sql) {
   $db->exec($sql);
 }
 
-// récupération de tous les ingrédients existants même on utilisés dans un cocktail
+// récupération de tous les ingrédients existants même non utilisés dans un cocktail
 // insert dans la table ingredient
 foreach($Hierarchie as $key => $nomIngredient) {
   $sql = $db->prepare("INSERT INTO ingredient(nomIngredient) VALUES(:nomIngredient)");
