@@ -3,5 +3,8 @@ A FAIRE :
   - complétion dans la recherche par mot clé
   - recherche de recette par filtre
   - terminer le rapport du projet
+  
+  Requete SQL pour la recherche de cocktail sans l'ingredient precisé: 
+    select cocktail.nomCocktail from cocktail where nomCocktail not in (select cocktail.nomCocktail from cocktail, liaison where liaison.nomCocktail = cocktail.nomCocktail AND liaison.nomIngredient := filtre);
 
 
