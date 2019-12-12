@@ -1,7 +1,6 @@
 A FAIRE :
   - exclure un ingrédient dans recherche par mot clé
-  - complétion dans la recherche par mot clé
-  - recherche de recette par filtre
+  - recherche par hiérarchie
   - terminer le rapport du projet
   
   Requete SQL pour la recherche de cocktail sans l'ingredient precisé: 
