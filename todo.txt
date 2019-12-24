@@ -1,9 +1,0 @@
-A FAIRE :
-  - exclure un ingrédient dans recherche par mot clé
-  - recherche par hiérarchie
-  - terminer le rapport du projet
-  
-  Requete SQL pour la recherche de cocktail sans l'ingredient precisé: 
-    select cocktail.nomCocktail from cocktail where nomCocktail not in (select cocktail.nomCocktail from cocktail, liaison where liaison.nomCocktail = cocktail.nomCocktail AND liaison.nomIngredient := filtre);
-
-
