@@ -6,13 +6,15 @@
    */
   function databaseConnect() {
     // connection à la database
+    // local run ($password = "root" for MacOS, $password = "" for Windows)
     $servername = "mysql:host=localhost;dbname=myDB;charset=utf8;";
     $username = "root";
     $password = "root";
-    /* POUR CLEMENTCOLNE.COM
-    $servername = "mysql:host=clementcanclem.mysql.db;dbname=clementcanclem;";
-    $username = "clementcanclem";
-    $password = "Vuhopu6Vuhopu6";
+    /* 
+    // internet run 
+    $servername = "mysql:host=putHereTheNameOfYourHost;dbname=putHereTheNameOfYourDatabase;";
+    $username = "putHereYourUsername";
+    $password = "putHereYourPassword";
     */
     // Connexion à la base de donnée
     try {
