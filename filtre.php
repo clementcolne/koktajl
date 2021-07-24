@@ -1,15 +1,9 @@
 <?php
 
-$servername = "mysql:host=clementcanclem.mysql.db;dbname=clementcanclem;";
-$username = "clementcanclem";
-$password = "Vuhopu6Vuhopu6";
-
-  // CETTE PARTIE AFFICHE TOUS LES COCKTAILS SELON UN FILTRE
-
     // connection à la database
-    $servername = "mysql:host=localhost;dbname=myDB;charset=utf8";
-    $username = "root";
-    $password = "root";
+    $servername = "mysql:host=<your host>;dbname=<your dbname>;";
+    $username = "<your username>";
+    $password = "<your password>";
     // Connexion à la base de donnée
     try {
       $db = new PDO($servername, $username, $password);
