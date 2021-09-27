@@ -24,3 +24,6 @@ Pour déployer le projet, lancer la stack [WAMP](https://www.wampserver.com) pou
 Ensuite, cloner le projet avec la commande `git@github.com:clementcolne/koktajl.git`
 Enfin, exécuter le fichier `assets/database/install.php` par l'adresse `http://localhost:8888/koktajl/assets/database/install.php` pour Mac par exemple.
 Suite à cela, la base de données est installée, configurée et remplie, vous pouvez accéder à la page d'accueil à l'adresse `http://localhost:8888/koktajl/index.php`
+
+## Captures
+![](https://github.com/clementcolne/koktajl/blob/master/koktajl.png)
